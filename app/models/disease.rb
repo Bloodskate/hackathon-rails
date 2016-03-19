@@ -1,3 +1,3 @@
 class Disease < ActiveRecord::Base
-	has_many :symptoms
+	has_and_belongs_to_many :symptoms
 end

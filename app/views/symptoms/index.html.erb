@@ -7,7 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:diseases_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= link_to symptom.id, symptom_path(symptom) %></td>
         <td><%= symptom.name %></td>
-        <td><%= symptom.diseases_id %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_symptom_path(symptom), :class => 'btn btn-default btn-xs' %>

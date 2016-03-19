@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319024243) do
+ActiveRecord::Schema.define(version: 20160319081140) do
 
   create_table "diseases", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
   end
+
+  create_table "diseases_symptoms", id: false, force: :cascade do |t|
+    t.integer "disease_id"
+    t.integer "symptom_id"
+  end
+
+  add_index "diseases_symptoms", ["disease_id"], name: "index_diseases_symptoms_on_disease_id"
+  add_index "diseases_symptoms", ["symptom_id"], name: "index_diseases_symptoms_on_symptom_id"
 
   create_table "symptoms", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "diseases_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "name"
   end
-
-  add_index "symptoms", ["diseases_id"], name: "index_symptoms_on_diseases_id"
 
 end

@@ -15,6 +15,7 @@ class SymptomsController < ApplicationController
   # GET /symptoms/new
   def new
     @symptom = Symptom.new
+    @diseases = Disease.all
   end
 
   # GET /symptoms/1/edit
