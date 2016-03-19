@@ -1,3 +1,55 @@
 // Place all the styles related to the diseases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#map {
+        width: 500px;
+        height: 400px;
+     }
+
+div.disease-name{
+	color:white;
+	background-color:#2C3E50;
+	padding:8px;
+	text-align:center;
+	border-radius:3px;
+	font-size:15px;
+
+}
+
+div.desc-disease {
+	width:100%;
+	display:inline-block;
+	background-color: #BDBDBD;
+	padding:4px;
+	overflow:hidden;
+	min-height:100px;
+	word-wrap: break-word; 
+}
+
+
+div.sym-disease{
+ 	padding:8px;
+ 	border-radius:3px;
+	background-color:white;
+}
+
+div.sym {
+	background-color:#bdbdbd;
+	color:black;
+	padding:5px;
+	
+}
+
+ul.nn{
+	font-size:13px;
+
+}
+
+div.nn {
+	font-size:17px;
+	padding:8px;
+	border-radius:3px;
+	background-color:#2C3E50;
+	color:white;
+}

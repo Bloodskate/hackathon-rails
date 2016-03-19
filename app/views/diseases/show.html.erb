@@ -3,11 +3,47 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<%= @disease.name %> 
-     <% @disease.symptoms.each do |a| %>
-      <li>    <%= a.name %> </li>
-      <% end %>
+<div class = "disease-name"><%= @disease.name %> </div>
 
+    <div class ="desc-disease" >
+       <p> asdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfaasdfasdfasdfa </p> 
+    </div>
+  <br><br>
+       <div class = "row">
+        <div class = "col-sm-6">   
+            <div class = "nn">Symptoms</div>
+             <div class = "sym"> 
+              <% @disease.symptoms.each do |a| %>
+                  <ul type = "none" class = "nn">
+                    <li>  <%= a.name %> </li>
+                  </ul>
+              <% end %>
+          </div>
+        </div>
+            <div class = "col-sm-6">   
+            <div class = "nn">Diagonais</div>
+             <div class = "sym"> 
+            
+              <ul type = "1">
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>
+                  <li> Roshan Gautam </li>               
+                  <li> Roshan Gautam </li>
+              </ul>
+              
+          </div>
+        </div>
+
+      </div>
+
+        
+      </div>
+
+      
 <%= link_to t('.back', :default => t("helpers.links.back")),
               diseases_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),

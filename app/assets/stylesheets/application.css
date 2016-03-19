@@ -51,6 +51,18 @@ body {
 }
 
 
+.symptoms-list a{
+	text-decoration:none;
+	padding: 10px;
+	border-radius: 4px;
+
+}
+
+.symptoms-list a:hover{
+	
+	text-decoration: none;
+	text-size: 50px;
+}
 
 
 

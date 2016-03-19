@@ -24,8 +24,9 @@
         		<nav>
           			<ul class="nav navbar-nav navbar-right">
            			 	<li><%= link_to "Home",   '/' %></li>
-            		 	<li><%= link_to "Help",   '#' %></li>
-            			 <li><%= link_to "Log in", '#' %></li>
+            		 	<li><%= link_to "Diseases",   '/diseases' %></li>
+            			<li><%= link_to "Symptoms", '/symptoms' %></li>
+                  <li><%= link_to "Log in", '#' %></li>
           			</ul>
         		</nav>
     		</div>
@@ -38,7 +39,7 @@
    			MVP For Hackathon by <a href = "http://www.brainants.com">Team BrainAnts</a>
    		</div>
    	</div>
- 	<div class = "container-fluid">
+ 	<div class = "container">
 		<%= yield %>
 	</div>
 </div>

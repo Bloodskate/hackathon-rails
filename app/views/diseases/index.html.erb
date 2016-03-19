@@ -1,39 +1,29 @@
+
 <%- model_class = Disease -%>
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th>Symptoms</th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @diseases.each do |disease| %>
-      <tr>
-        <td><%= link_to disease.id, disease_path(disease) %></td>
-        <td><%= disease.name %></td>
-        <td>
-        	
-        	
-        </td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_disease_path(disease), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      disease_path(disease),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_disease_path,
-            :class => 'btn btn-primary' %>
+    <% @diseases.each do |disease| %>
+      
+      <%= link_to disease.name, disease_path(disease) %>
+     
+        <%end%>
+
+           <div id="map"></div>
+           
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3smUVxAMr9TNKUuqVzhvS8cUhM6lZgkc
+        &callback=initMap">
+    </script>
+
+
+  
+ 
+
+
+
+
+     
+
