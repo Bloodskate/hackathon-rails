@@ -3,15 +3,14 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+  
+   <%= @symptom.name %> 
+     <% @symptom.diseases.each do |a| %>
+      <li>    <%= a.name %> </li>
+      <% end %>
+    
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @symptom.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:diseases_id) %>:</strong></dt>
-  <dd>
-
-  </dd>
-</dl>
+  
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               symptoms_path, :class => 'btn btn-default'  %>
