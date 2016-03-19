@@ -78,6 +78,6 @@ class SymptomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def symptom_params
-      params.require(:symptom).permit(:name, :diseases_id)
+      params.require(:symptom).permit(:name, {disease_ids:[]})
     end
 end

@@ -23,6 +23,13 @@
     <%=f.error_span(:name) %>
   </div>
 
+  <% @symptoms.each do |sym|%>
+  <div>
+    <%= check_box_tag "disease[symptom_ids][]", sym.id, @disease.symptoms.include?(sym) %>
+    <%= sym.name %>
+  </div>
+  <% end %>
+
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
