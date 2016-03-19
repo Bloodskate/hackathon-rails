@@ -10,6 +10,12 @@ class SymptomsController < ApplicationController
   # GET /symptoms/1
   # GET /symptoms/1.json
   def show
+    @symptom = Symptom.find(params[:id])
+    @diseases = @symptom.diseases
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @symptom}
+    end 
   end
 
   # GET /symptoms/new
@@ -20,6 +26,8 @@ class SymptomsController < ApplicationController
 
   # GET /symptoms/1/edit
   def edit
+
+    @diseases = Disease.all
   end
 
   # POST /symptoms
@@ -70,6 +78,6 @@ class SymptomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def symptom_params
-      params.require(:symptom).permit(:name, :diseases_id)
+      params.require(:symptom).permit(:name, {disease_ids:[]})
     end
 end

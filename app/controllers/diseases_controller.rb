@@ -11,15 +11,24 @@ class DiseasesController < ApplicationController
   # GET /diseases/1
   # GET /diseases/1.json
   def show
+    @disease = Disease.find(params[:id])
+    @symptoms = @disease.symptoms
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @disease}
+    end 
   end
 
   # GET /diseases/new
   def new
     @disease = Disease.new
+    @symptoms = Symptom.all
   end
 
   # GET /diseases/1/edit
   def edit
+
+    @symptoms = Symptom.all
   end
 
   # POST /diseases
@@ -70,6 +79,6 @@ class DiseasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def disease_params
-      params.require(:disease).permit(:name)
+      params.require(:disease).permit(:name, { symptom_ids:[]})
     end
 end

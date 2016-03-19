@@ -23,6 +23,12 @@
     <%=f.error_span(:name) %>
   </div>
   
+  <% @diseases.each do |dis|%>
+  <div>
+    <%= check_box_tag "symptom[disease_ids][]", dis.id, @symptom.diseases.include?(dis) %>
+    <%= dis.name %>
+  </div>
+  <% end %>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
@@ -31,5 +37,6 @@
                 symptoms_path, :class => 'btn btn-default' %>
     </div>
   </div>
+
   
 <% end %>
