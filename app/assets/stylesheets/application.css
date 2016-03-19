@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+/*!
+ * Freelancer v1.0.6 (http://startbootstrap.com/template-overviews/freelancer)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+  
+}
+
+.footer {
+	color: white;
+  padding-top: 30px;
+  padding: 10px 0;
+
+  background-color: #2c3e50;
+}
+
+
+
+
