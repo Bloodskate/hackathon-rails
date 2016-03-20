@@ -1,16 +1,24 @@
-
+<head><title>Diseases</title></head>
 <%- model_class = Disease -%>
 
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
+ <h4>This section contains the list of diseases. The diseases listed here are clickable and when you click them, you will be redirected to the page with symptoms for the disease. </h4>
+ 	<div class = "disease-name">
+ 		List of Diseases
+ 	</div>
+
+ 	<div class = "list-disease">
     <% @diseases.each do |disease| %>
-      
-      <%= link_to disease.name, disease_path(disease) %>
+    <ul type = "none">
+      <li><%= link_to disease.name, disease_path(disease) %> <li>
+     </ul>
      
         <%end%>
-
+    
+    </div>
            <div id="map"></div>
            
     <script async defer
