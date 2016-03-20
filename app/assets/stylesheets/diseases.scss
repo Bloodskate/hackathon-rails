@@ -34,6 +34,23 @@ div.sym-disease{
 	background-color:white;
 }
 
+div.list-disease {
+	width:100%;
+	display:inline-block;
+	background-color: #BDBDBD;
+	padding:10px;
+	font-size: 13px;
+	min-height:100px;	
+}
+
+div.list-disease > a:hover {
+	color:black;
+	background-color: #BDBDBD;	
+}
+div.list-disease > li > a {
+	color:black;
+}
+
 div.sym {
 	background-color:#bdbdbd;
 	color:black;
