@@ -69,7 +69,9 @@ class SymptomsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def search
+    @diseases = Disease.includes(:symptoms).where('symptoms.id' => params[:symptom_ids])
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_symptom

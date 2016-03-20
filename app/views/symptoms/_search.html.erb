@@ -1,0 +1,10 @@
+<% @symptom = Symptom.new %>
+<%= form_for @symptom, :url => {:action => "search"}, method: :get , :html => { :class => "form-horizontal symptom" } do |f| %>
+	<% Symptom.all.each do |sym|%>
+ 		<div>
+		  <%= check_box_tag "symptom_ids[]", sym.id%>
+		  <%= sym.name %>
+	    </div>
+	<% end %>
+	<%= f.submit "submit"%>
+<% end %>

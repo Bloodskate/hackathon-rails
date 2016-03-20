@@ -7,4 +7,5 @@
     	<ul type ="none" class = "symptoms-list">
         	<li><%= link_to symptom.name, symptom_path(symptom) %> </li>
         </ul>
-<%end%>
+	<%end%>
+	<%= render :partial => 'search' %>
