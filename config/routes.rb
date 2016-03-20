@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+get '/symptoms/search' => 'symptoms#search' 
   resources :symptoms
   resources :diseases
   resources :welcome
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 get '/home' => 'welcome#home'
-get '/search' => 'symptoms#search'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
