@@ -1,5 +1,3 @@
 <br><br><br><br>hello
 <%= render :partial => 'search' %>
-<% @diseases.each do |dis| %>
-        <li><%= link_to dis.name, disease_path(dis) %> </li>
-<% end %>
+<%= @symptoms.inspect %>

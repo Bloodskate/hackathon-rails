@@ -70,7 +70,16 @@ class SymptomsController < ApplicationController
     end
   end
   def search
-    @diseases = Disease.includes(:symptoms).where('symptoms.id' => params[:symptom_ids])
+    sym_ids = params[:symptom_ids]
+    @symtoms = Symptom.where('id' => sym_ids)
+    
+    #@symptoms.each do |sym|
+    #  dis_id[] = sym.disease.id
+    #end
+    #@diseases = Disease.find(dis_id)
+
+    #@diseases = Disease.includes(:symptoms).where('symptoms.id' => sym_ids).group("diseases.id")
+
   end
   private
     # Use callbacks to share common setup or constraints between actions.
