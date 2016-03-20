@@ -4,7 +4,10 @@ class SymptomsController < ApplicationController
   # GET /symptoms
   # GET /symptoms.json
   def index
-    @symptoms = Symptom.all
+    #@symptoms = Symptom.all
+    
+     @symptoms = Symptom.search(params[:search])
+   
   end
 
   # GET /symptoms/1
@@ -59,7 +62,7 @@ class SymptomsController < ApplicationController
       end
     end
   end
-
+  
   # DELETE /symptoms/1
   # DELETE /symptoms/1.json
   def destroy
@@ -70,8 +73,13 @@ class SymptomsController < ApplicationController
     end
   end
   def search
-    sym_ids = params[:symptom_ids]
-    @symtoms = Symptom.where('id' => sym_ids)
+    @symptoms = Symptom.all
+    respond_to do |format|
+      format.html
+      format.js 
+    end 
+    # sym_ids = params[:symptom_ids]
+    #@symtoms = Symptom.where('id' => sym_ids)
     
     #@symptoms.each do |sym|
     #  dis_id[] = sym.disease.id
@@ -81,6 +89,7 @@ class SymptomsController < ApplicationController
     #@diseases = Disease.includes(:symptoms).where('symptoms.id' => sym_ids).group("diseases.id")
 
   end
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_symptom

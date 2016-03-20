@@ -3,10 +3,24 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+	<%= form_tag symptoms_path, :method => 'get', :id => "symptomss_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <div id="cresults_div"><%= render 'search' %></div>
+<% end %>
 
-    <% @symptoms.each do |symptom| %>
-    	<ul type ="none" class = "symptoms-list">
-        	<li><%= link_to symptom.name, symptom_path(symptom) %> </li>
-        </ul>
-	<%end%>
+
+
+
+<script>
+	$(function() {
+  $("#contacts_search input").keyup(function() {
+    $.get($("#contacts_search").attr("action"), $("#contacts_search").serialize(), null, "script");
+    return false;
+  });
+});
+</script>
+    
 	
