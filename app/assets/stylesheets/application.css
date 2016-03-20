@@ -64,7 +64,9 @@ body {
 	text-decoration: none;
 	text-size: 50px;
 }
-
+#full {
+	width: 100vw;
+}
 
 
 
