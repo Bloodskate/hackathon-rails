@@ -1,11 +1,18 @@
 <head><title>Diseases</title></head>
 <%- model_class = Disease -%>
 
+  <div class ="container-fluid" style ="padding:0px;">
+           <div id="map">
+           	
+           </div>
+     </div>
+<div class = "container">
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
 </div>
 
  <h4>This section contains the list of diseases. The diseases listed here are clickable and when you click them, you will be redirected to the page with symptoms for the disease. </h4>
+ 	
  	<div class = "disease-name">
  		List of Diseases
  	</div>
@@ -19,12 +26,8 @@
         <%end%>
     
     </div>
-    <br><br>
-    <div class ="container-fluid">
-           <div id="map">
-           	
-           </div>
-     </div>
+    </div>
+  
            
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3smUVxAMr9TNKUuqVzhvS8cUhM6lZgkc
